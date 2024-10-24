@@ -1,0 +1,27 @@
+server:
+  port: 8080  # Port for the gateway
+
+spring:
+  application:
+    name: api-gateway  # Name of the gateway service
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true  # Enable service discovery for routing
+          lower-case-service-id: true  # Ensure service IDs are lowercase for routing
+      routes:
+        - id: books-service
+          uri: lb://books-service  # Load balancing to books-service
+          predicates:
+            - Path=/books/**  # Route requests with /books/ to the Books service
+        - id: authors-service
+          uri: lb://authors-service  # Load balancing to authors-service
+          predicates:
+            - Path=/authors/**  # Route requests with /authors/ to the Authors service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/  # Eureka server URL
