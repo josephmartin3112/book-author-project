@@ -1,7 +1,7 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/books
+      uri: mongodb+srv://josephmartin3112:123456joseph7890@trialproject.wigju.mongodb.net/books?retryWrites=true&w=majority&appName=TrialProject
 eureka:
   client:
     service-url:

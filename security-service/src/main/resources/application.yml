@@ -6,4 +6,4 @@ eureka:
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/security
+      uri: mongodb+srv://josephmartin3112:123456joseph7890@trialproject.wigju.mongodb.net/security?retryWrites=true&w=majority&appName=TrialProject
