@@ -24,7 +24,7 @@ public class AuthorService {
     public Flux<BookDto> getBooksByAuthorName(String authorName) {
         return webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8081/books/author/{authorName}", authorName) // Replace with your Books service URL
+                .uri("http://books-service:8081/books/author/{authorName}", authorName) // Replace with your Books service URL
                 .retrieve()
                 .bodyToFlux(BookDto.class);
     }
